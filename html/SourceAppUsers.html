@@ -1,0 +1,82 @@
+
+<div class="generic-container" ng-controller="sourceAppUserCtrl as ctrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10" style="width:450px;margin-left: 400px;margin-top:-20px;">
+
+                <div class="jumbotron">
+                    <div class="form-group" style="margin-top:-54px;">
+                        <h2 style="margin-left: 0px;">Source AppUsers</h2></div>
+                    <hr>
+                    <form ng-submit="sourceAppUsers(sourceapp.username,sourceapp.applicationname)" class="form-horizontal" style="margin-left: 30px;">
+                        <div class="form-group input-group">
+
+                            <h3>Application Name:</h3> <input type="text" id="applicationname" class="form-control" placeholder="Application Name *" ng-model="sourceapp.applicationname" required="" />
+                        </div>
+                        <div class="form-group input-group">
+
+
+                            <h3>User Name:</h3> <input type="text" id="accesspointid" class="form-control" placeholder="Access point *" ng-model="sourceapp.username" required=""/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-right">Search</button>
+                            <button class="btn btn-primary" ui-sref="log" ng-click="ctrl.reset()" style="width: 80px;">Cancel</button>
+                        </div>
+
+                    </form></div>
+
+                <div class="col-sm-20" style="width:700px;margin-left:10px;">
+
+                    <div class="panel-heading"><span class="lead">SourceApp users details </span></div>
+                    <div class="tablecontainer">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>SourceLoginId</th>
+                                <th>sourceLoginName</th>
+                                <th>FirstName</th>
+                                <th>MiddleNme</th>
+                                <th>LastName</th>
+                                <th>UserType</th>
+
+                                <th>EmailId</th>
+                                <th>ApplicationName</th>
+                                <th>Startdate</th>
+                                <th>End date</th>
+
+                                <th width="20%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            <tr ng-repeat="u in SourceAppUsers">
+                                <td><span ng-bind="u.sa_LOGIN_ID"></span></td>
+                                <td><span ng-bind="u.sa_LOGIN_NAME"></span></td>
+                                <td><span ng-bind="u.sa_USER_FIRSTNAME"></span></td>
+
+                                <td><span ng-bind="u.sa_USER_MIDDLENAME"></span></td>
+                                <td><span ng-bind="u.sa_USER_LASTNAME"></span></td>
+                                <td><span ng-bind="u.sa_USER_TYPE"></span></td>
+                                <td><span ng-bind="u.sa_USER_EMAIL"></span></td>
+                                <td><span ng-bind="u.applicatioName"></span></td>
+                                <td><span ng-bind="u.start_DATE"></span></td>
+                                <td><span ng-bind="u.end_DATE"></span></td>
+
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

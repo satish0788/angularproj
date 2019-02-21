@@ -1,0 +1,71 @@
+
+<div class="generic-container" ng-controller="accessGroupController as ctrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10" style="width:450px;margin-left: 400px;margin-top:-20px;">
+
+                <div class="jumbotron">
+                    <div class="form-group" style="margin-top:-54px;">
+                        <h2 style="margin-left: 0px;">Acess Groups</h2></div>
+                    <hr>
+                    <form ng-submit="accessGrpSearch(accessgroup.accessgroupid,accessgroup.applicationname)" class="form-horizontal" style="margin-left: 30px;">
+                        <div class="form-group input-group">
+
+                            <h3>Application Name:</h3> <input type="text" id="applicationname" class="form-control" placeholder="Application Name *" ng-model="accessgroup.applicationname" required="" />
+                        </div>
+                        <div class="form-group input-group">
+
+
+                            <h3>Access Group Id:</h3> <input type="text" id="accesspointid" class="form-control" placeholder="Access Groupid*" ng-model="accessgroup.accessgroupid" required=""/>
+                        </div>
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-right">Search</button>
+                            <button class="btn btn-primary" ui-sref="log" ng-click="ctrl.reset()" style="width: 80px;">Cancel</button>
+                        </div>
+
+                    </form></div>
+
+                <div class="col-sm-10" style="width:700px;margin-left:10px;">
+
+                    <div class="panel-heading"><span class="lead">AccessGroup search details </span></div>
+                    <div class="tablecontainer">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>AccesgroupID.</th>
+                                <th>Accessgroupcode</th>
+                                <th>Applicationname</th>
+
+                                <th>Accessgroupdesc</th>
+
+                                <th>status</th>
+                                <th width="20%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr ng-repeat="x in accessGroups">
+                                <td><span ng-bind="x.accessgroupid"></span></td>
+                                <td><span ng-bind="x.accessgroupcode"></span></td>
+                                <td><span ng-bind="x.applicationname"></span></td>
+
+                                <td><span ng-bind="x.accessgroupdesc"></span></td>
+
+                                <td><span ng-bind="x.status"></span></td>
+
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,40 @@
+<div ng-controller="loginController"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-10" style="width:600px;margin-left: 250px;margin-top:50px;">
+
+            <div class="jumbotron">
+                <div class="form-group" style="margin-top:-50px;">
+                    <h2 style="margin-left: 150px;">Login</h2></div>
+                <hr>
+            <form action="log" class="form-horizontal" style="margin-left: 50px;">
+                <div class="form-group input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" id="username" class="form-control" placeholder="Your Email *" ng-model="username" required=""  />
+                </div>
+                <div class="form-group input-group">
+<span class="input-group-addon">
+                        <span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" id="password" class="form-control" placeholder="Your Password *" ng-model="password" required=""/>
+                </div>
+
+                <div class="form-group">
+                  <label>
+
+                      <input type="checkbox">
+                      Remember me
+                  </label>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" ui-sref="log" ng-click="submit()" style="width: 430px;">Login</button>
+                </div>
+
+            </form></div>
+
+
+
+            </div>
+        </div>
+
+    </div>

@@ -1,0 +1,60 @@
+<body>
+<div ng-app = "myApp" class = "container" style="width:550px">
+    <div style="text-align:center;color:blue">
+        <h3><b>Application Registraion Form</b></h3>
+    </div>
+    <div ng-controller = "registerApplicationController">
+
+        <form role = "form" class="well">
+            <div class = "form-group">
+                <label for = "name"> Licence Name:  </label>
+                <input type = "text" id = "name" class = "form-control" placeholder = "Enter Name " ng-model = "user.licencename">
+            </div>
+            <div class = "form-group">
+                <label for = "name"> ApplicationCode:  </label>
+                <input type = "text"  class = "form-control" placeholder = "Enter Application code " ng-model = "user.applicationcode">
+            </div>
+            <div class = "form-group">
+                <label for = "name"> ApplicationName:  </label>
+                <input type = "text"  class = "form-control" placeholder = "Enter Application name " ng-model = "user.applicationname">
+            </div>
+            <div class = "form-group">
+                <label for = "name"> ConnectionString:  </label>
+                <input type = "text"  class = "form-control" placeholder = "Enter connection string" ng-model = "user.connectionstring">
+            </div>
+
+            <div class = "form-group">
+                <label for = "name"> ConnectionType:</label>
+
+
+            <select class = "form-control" ng-model="user.selectedName" ng-options="x  for x in conntypes "/>
+
+            </div>
+
+
+            <div class = "form-group">
+                <label for = "name"> Start Date  </label>
+
+
+                <input type="date"  name="startdate" ng-model="user.value" required />
+
+
+                <td>value = {{user.value}}</td>
+            </div>
+                     <div class = "form-group">
+                  <label for = "name"> End Date  </label>
+
+
+                         <input type="date" class="form-control" ng-model= "date"/>
+
+
+
+</div>
+<div class = "form-group">
+            <input type="button" class="btn btn-primary" ng-click="registerApplication(user)" class="btn btn-primary" value = "Submit">
+</div>
+
+        </form>
+    </div>
+</div>
+</body>
